@@ -21,5 +21,20 @@ directions.forEach(line => {
 console.log(`Part 1: ${horizontalPos*depth}`)
 
 //  P2
-
-// console.log(`Part 2: ${p2}`)
+let aim = 0
+let horizontalPosP2 = 0
+let depthP2 = 0
+directions.forEach(line => {
+    if(line[0] === "forward"){
+        horizontalPosP2 += parseInt(line[1])
+        depthP2 += (aim*parseInt(line[1]))
+    }
+    if(line[0] === "down"){
+        aim += parseInt(line[1])
+    }
+    if(line[0] === "up"){
+        aim -= parseInt(line[1])
+    }
+    
+});
+console.log(`Part 2: ${horizontalPosP2*depthP2}`)
